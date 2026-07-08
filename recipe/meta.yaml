@@ -1,5 +1,5 @@
 {% set name = "html5tagger" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/html5tagger-{{ version }}.tar.gz
-  sha256: 84fa3dfb49e5c83b79bbd856ab7b1de8e2311c3bb46a8be925f119e3880a8da9
+  sha256: d19e72e3dc794621abacfdabe6be9d18da8dbf58f6992c0695e92ade8fae5466
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:

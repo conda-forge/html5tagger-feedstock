@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: html5tagger
+  version: "1.4.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/html5tagger-${{ version }}.tar.gz
+  sha256: d19e72e3dc794621abacfdabe6be9d18da8dbf58f6992c0695e92ade8fae5466
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - html5tagger
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Pythonic HTML generation/templating (no template files)
+  license: Unlicense
+  license_file: LICENSE
+  homepage: https://github.com/sanic-org/html5tagger
+
+extra:
+  recipe-maintainers:
+    - thewchan

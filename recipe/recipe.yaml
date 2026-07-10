@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: html5tagger
-  version: "1.4.0"
+  version: "2.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/html5tagger-${{ version }}.tar.gz
-  sha256: d19e72e3dc794621abacfdabe6be9d18da8dbf58f6992c0695e92ade8fae5466
+  sha256: 0dee3c9054443930e9a3225edcc810b6df76c0aeabfee463e9437a90a1ac1624
 
 build:
   number: 0
